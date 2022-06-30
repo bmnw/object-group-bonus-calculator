@@ -40,3 +40,31 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+// Processing Employee Bonuses loop
+
+for(let i=0; i<employees.length; i += 1){
+  console.log('employee info:', employees[i]);
+}
+
+// Function Logic
+
+/**
+ * Determine and return input employee bonus %, total comp, and total bonus as an object
+ * @param {object} employeeInput
+ * @return new object with bonus and compenstation properties
+ */
+
+function bonusCalculator(employeeInput){
+  console.log('in bonusCalculator:', employeeInput);
+  let bonusPercentage = 0;
+  // make totalCompensation another function that we call here
+  const newObject = {
+    name: employeeInput.name,
+    bonusPercentage: bonusPercentage,
+    totalCompensation: totalCompensation,
+    totalBonus: totalBonus,
+  };
+  return newObject;
+  }
+
