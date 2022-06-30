@@ -58,13 +58,57 @@ for(let i=0; i<employees.length; i += 1){
 function bonusCalculator(employeeInput){
   console.log('in bonusCalculator:', employeeInput);
   let bonusPercentage = 0;
-  // make totalCompensation another function that we call here
+  let salaryNumber = Number.parseInt(employeeInput.annualSalary);
+  let employeeNumber = Number.parseInt(employeeInput.employeeNumber);
+  console.log(typeof(salaryNumber));
+  // determining bonus percentage
+  if(employeeInput.reviewRating <= 2){
+    console.log('no bonus for you!');
+  } else if(employeeInput.reviewRating === 3){
+    console.log('bonus of 4%')
+    bonusPercentage = 1.04;
+  } else if(employeeInput.reviewRating === 4){
+    console.log('bonus of 6%');
+    bonusPercentage = 1.06;
+  } else if(employeeInput.reivewRating === 5){
+    console.log('bonus of 10%');
+    bonusPercentage = 1.10;
+  } // end bonus percentage
+  // employement duration bonus
+  if(employeeNumber.length === 4){
+    console.log('here longer than 15 years, extra 5% bonus');
+    bonusPercentage += 0.05;
+  } // end employment duration bonus
+  // salary max bonus reducation
+  if(salaryNumber > 65000){
+    console.log('makes too much, bonus reduction');
+    bonusPercentage -= 0.01;
+  } // end bonus reduction
+  if(bonusPercentage > 1.13){
+    bonusPercentage = 1.13;
+  }
+  if(bonusPercentage < 0){
+    bonusPercentage = 1.0;
+  }
+  console.log('total bonus %:', bonusPercentage);
+  // total compensation
+  totalCompensation = Math.round(salaryNumber * bonusPercentage);
+  console.log('total compensation:', totalCompensation);
+  // total bonus
+  let totalBonus = Math.round(totalCompensation - salaryNumber);
+  console.log('total bonus:', totalBonus);
+  // new object
   const newObject = {
     name: employeeInput.name,
     bonusPercentage: bonusPercentage,
     totalCompensation: totalCompensation,
     totalBonus: totalBonus,
   };
+  console.log(newObject);
   return newObject;
   }
+
+for(let i=0; i<employees.length; i += 1){
+  bonusCalculator(employees[i]);
+}
 
