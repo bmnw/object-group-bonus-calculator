@@ -70,12 +70,12 @@ function bonusCalculator(employeeInput){
   } else if(employeeInput.reviewRating === 4){
     console.log('bonus of 6%');
     bonusPercentage = 1.06;
-  } else if(employeeInput.reivewRating === 5){
+  } else if(employeeInput.reviewRating === 5){
     console.log('bonus of 10%');
     bonusPercentage = 1.10;
   } // end bonus percentage
   // employement duration bonus
-  if(employeeNumber.length === 4){
+  if(employeeInput.employeeNumber.length === 4){
     console.log('here longer than 15 years, extra 5% bonus');
     bonusPercentage += 0.05;
   } // end employment duration bonus
@@ -87,7 +87,7 @@ function bonusCalculator(employeeInput){
   if(bonusPercentage > 1.13){
     bonusPercentage = 1.13;
   }
-  if(bonusPercentage < 0){
+  if(bonusPercentage <= 0){
     bonusPercentage = 1.0;
   }
   console.log('total bonus %:', bonusPercentage);
