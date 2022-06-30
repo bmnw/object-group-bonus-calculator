@@ -59,7 +59,7 @@ function bonusCalculator(employeeInput){
   console.log('in bonusCalculator:', employeeInput);
   let bonusPercentage = 0;
   let salaryNumber = Number.parseInt(employeeInput.annualSalary);
-  let employeeNumber = Number.parseInt(employeeInput.employeeNumber);
+  //let employeeNumber = Number.parseInt(employeeInput.employeeNumber);
   console.log(typeof(salaryNumber));
   // determining bonus percentage
   if(employeeInput.reviewRating <= 2){
@@ -106,7 +106,7 @@ function bonusCalculator(employeeInput){
   };
   console.log(newObject);
   return newObject;
-  }
+}
 
 for(let i=0; i<employees.length; i += 1){
   bonusCalculator(employees[i]);
